@@ -78,7 +78,6 @@ func (b *BitBucketClient) GetRepos() (repo repositories, err error) {
 
 	response, err := b.client.Do(req)
 	if err != nil {
-		fmt.Println(err)
 		return repo, err
 	}
 	body, err := ioutil.ReadAll(response.Body)
@@ -108,7 +107,6 @@ func (b *BitBucketClient) GetCommitDetail(url string) (commit commit, err error)
 
 	response, err := b.client.Do(req)
 	if err != nil {
-		fmt.Println(err)
 		return commit, err
 	}
 	body, err := ioutil.ReadAll(response.Body)
